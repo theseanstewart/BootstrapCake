@@ -34,17 +34,17 @@
 		<div class="col-md-3">
 			<div class="actions">
 				<div class="panel panel-default">
-					<div class="panel-heading">Actions</div>
+					<div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>";?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><?php echo "<?php echo \$this->Html->link(__('<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;New " . $singularHumanName . "'), array('action' => 'add'), array('escape' => false)); ?>"; ?></li>
+								<li><?php echo "<?php echo \$this->Html->link('<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;'.__('New " . $singularHumanName . "'), array('action' => 'add'), array('escape' => false)); ?>"; ?></li>
 						<?php
 							$done = array();
 							foreach ($associations as $type => $data) {
 								foreach ($data as $alias => $details) {
 									if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-										echo "\t\t<li><?php echo \$this->Html->link(__('<span class=\"glyphicon glyphicon-list\"></span>&nbsp;&nbsp;List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index'), array('escape' => false)); ?> </li>\n";
-										echo "\t\t<li><?php echo \$this->Html->link(__('<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('escape' => false)); ?> </li>\n";
+										echo "\t\t<li><?php echo \$this->Html->link('<span class=\"glyphicon glyphicon-list\"></span>&nbsp;&nbsp;List'.__('" . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index'), array('escape' => false)); ?> </li>\n";
+										echo "\t\t<li><?php echo \$this->Html->link('<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;New'.__('" . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('escape' => false)); ?> </li>\n";
 										$done[] = $details['controller'];
 									}
 								}
@@ -61,7 +61,7 @@
 				<thead>
 					<tr>
 			<?php foreach ($fields as $field): ?>
-			<th><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th>
+			<th nowrap><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th>
 			<?php endforeach; ?>
 			<th class="actions"></th>
 					</tr>
@@ -82,7 +82,7 @@
 						}
 					}
 					if ($isKey !== true) {
-						echo "\t\t\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
+						echo "\t\t\t\t\t\t<td nowrap><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
 					}
 				}
 

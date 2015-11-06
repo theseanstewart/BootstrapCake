@@ -31,7 +31,7 @@
 		<div class="col-md-3">
 			<div class="actions">
 				<div class="panel panel-default">
-					<div class="panel-heading">Actions</div>
+					<div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>";?></div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
 							<?php
