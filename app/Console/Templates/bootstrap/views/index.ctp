@@ -20,7 +20,7 @@
 <div class="<?php echo $pluralVar; ?> index">
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-lg-12">
 			<div class="page-header">
 				<h1><?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h1>
 			</div>
@@ -31,12 +31,12 @@
 
 	<div class="row">
 
-		<div class="col-md-3">
+		<div class="col-lg-3">
 			<div class="actions">
-				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>";?></div>
-						<div class="panel-body">
-							<ul class="nav nav-pills nav-stacked">
+				<div class="card">
+					<div class="card-header"><?php echo "<?php echo __('Actions'); ?>";?></div>
+						<div class="card-body">
+							<ul class="nav nav-pills flex-column">
 								<li><?php echo "<?php echo \$this->Html->link('<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;'.__('New " . $singularHumanName . "'), array('action' => 'add'), array('escape' => false)); ?>"; ?></li>
 						<?php
 							$done = array();
@@ -56,7 +56,7 @@
 			</div><!-- end actions -->
 		</div><!-- end col md 3 -->
 
-		<div class="col-md-9">
+		<div class="col-lg-9">
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<thead>
 					<tr>

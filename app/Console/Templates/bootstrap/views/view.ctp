@@ -19,7 +19,7 @@
 ?>
 <div class="<?php echo $pluralVar; ?> view">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-lg-12">
 			<div class="page-header">
 				<h1><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h1>
 			</div>
@@ -28,12 +28,12 @@
 
 	<div class="row">
 
-		<div class="col-md-3">
+		<div class="col-lg-3">
 			<div class="actions">
-				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>";?></div>
-						<div class="panel-body">
-							<ul class="nav nav-pills nav-stacked">
+				<div class="card">
+					<div class="card-header"><?php echo "<?php echo __('Actions'); ?>";?></div>
+						<div class="card-body">
+							<ul class="nav nav-pills flex-column">
 							<?php
 								echo "\t\t<li><?php echo \$this->Html->link(__('<span class=\"glyphicon glyphicon-edit\"></span>&nbsp&nbsp;Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('escape' => false)); ?> </li>\n";
 								echo "\t\t<li><?php echo \$this->Form->postLink(__('<span class=\"glyphicon glyphicon-remove\"></span>&nbsp;&nbsp;Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('escape' => false), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
@@ -57,7 +57,7 @@
 			</div><!-- end actions -->
 		</div><!-- end col md 3 -->
 
-		<div class="col-md-9">			
+		<div class="col-lg-9">			
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<tbody>
 				<?php
@@ -93,7 +93,7 @@
 if (!empty($associations['hasOne'])) :
 	foreach ($associations['hasOne'] as $alias => $details): ?>
 	<div class="row related">
-		<div class="col-md-12">
+		<div class="col-lg-12">
 			<h3><?php echo "<?php echo __('Related " . Inflector::humanize($details['controller']) . "'); ?>"; ?></h3>
 			<table class="table table-striped">
 			<tbody>
@@ -129,7 +129,7 @@ foreach ($relations as $alias => $details):
 	$otherPluralHumanName = Inflector::humanize($details['controller']);
 	?>
 <div class="related row">
-	<div class="col-md-12">
+	<div class="col-lg-12">
 	<h3><?php echo "<?php echo __('Related " . $otherPluralHumanName . "'); ?>"; ?></h3>
 	<?php echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
 	<table cellpadding = "0" cellspacing = "0" class="table table-striped">
