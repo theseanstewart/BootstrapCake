@@ -110,7 +110,7 @@ if (!empty($associations['hasOne'])) :
 			</tbody>
 			</table>
 			<div class="actions">
-				<?php echo "<?php echo \$this->Html->link(__('Edit " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('escape' => false, 'class' => 'btn btn-default')); ?>\n"; ?>
+				<?php echo "<?php echo \$this->Html->link(__('Edit " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('escape' => false, 'class' => 'btn btn-primary')); ?>\n"; ?>
 			</div>
 		</div><!-- end col md 12 -->
 	</div>
@@ -164,7 +164,7 @@ echo "\t<?php endforeach; ?>\n";
 	</table>
 <?php echo "<?php endif; ?>\n\n"; ?>
 	<div class="actions">
-		<?php echo "<?php echo \$this->Html->link(__('<span class=\"fa fa-plus\"></span>&nbsp;&nbsp;New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('escape' => false, 'class' => 'btn btn-default')); ?>"; ?> 
+		<?php echo "<?php echo \$this->Html->link(__('<span class=\"fa fa-plus\"></span>&nbsp;&nbsp;New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('escape' => false, 'class' => 'btn btn-primary')); ?>"; ?> 
 	</div>
 	</div><!-- end col md 12 -->
 </div>

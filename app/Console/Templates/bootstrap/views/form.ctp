@@ -80,7 +80,7 @@
 ?>
 <?php
 				echo "\t\t\t\t<div class=\"form-group\">\n";
-				echo "\t\t\t\t\t<?php echo \$this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>\n";
+				echo "\t\t\t\t\t<?php echo \$this->Form->submit(__('Submit'), array('class' => 'btn btn-primary')); ?>\n";
 				echo "\t\t\t\t</div>\n\n";
 
 			echo "\t\t\t<?php echo \$this->Form->end() ?>\n\n";
