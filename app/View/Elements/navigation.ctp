@@ -1,19 +1,17 @@
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+<div class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+    <div class="container">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">&#x2630;</button> <a class="navbar-brand" href="#">Project name</a>
+        <div
+        class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active nav-item"><a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
     </div>
+    <!--/.nav-collapse -->
+</div>
+</div>

@@ -20,7 +20,7 @@
 <div class="<?php echo $pluralVar; ?> form">
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-lg-12">
 			<div class="page-header">
 				<h1><?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?></h1>
 			</div>
@@ -30,24 +30,24 @@
 
 
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-lg-3">
 			<div class="actions">
-				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo "<?php echo __('Actions'); ?>";?></div>
-						<div class="panel-body">
-							<ul class="nav nav-pills nav-stacked">
+				<div class="card">
+					<div class="card-header"><?php echo "<?php echo __('Actions'); ?>";?></div>
+						<div class="card-body">
+							<ul class="nav nav-pills flex-column">
 
 							<?php if (strpos($action, 'add') === false): ?>
-									<li><?php echo "<?php echo \$this->Form->postLink('<span class=\"glyphicon glyphicon-remove\"></span>&nbsp;&nbsp;'.__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), array('escape' => false), __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>"; ?></li>
+									<li><?php echo "<?php echo \$this->Form->postLink('<span class=\"fa fa-remove\"></span>&nbsp;&nbsp;'.__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), array('escape' => false), __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>"; ?></li>
 							<?php endif; ?>
-									<li><?php echo "<?php echo \$this->Html->link('<span class=\"glyphicon glyphicon-list\"></span>&nbsp;&nbsp;'.__('List " . $pluralHumanName . "'), array('action' => 'index'), array('escape' => false)); ?>"; ?></li>
+									<li><?php echo "<?php echo \$this->Html->link('<span class=\"fa fa-list\"></span>&nbsp;&nbsp;'.__('List " . $pluralHumanName . "'), array('action' => 'index'), array('escape' => false)); ?>"; ?></li>
 							<?php
 									$done = array();
 									foreach ($associations as $type => $data) {
 										foreach ($data as $alias => $details) {
 											if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-												echo "\t\t<li><?php echo \$this->Html->link('<span class=\"glyphicon glyphicon-list\"></span>&nbsp;&nbsp;'.__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index'), array('escape' => false)); ?> </li>\n";
-												echo "\t\t<li><?php echo \$this->Html->link('<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;'.__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('escape' => false)); ?> </li>\n";
+												echo "\t\t<li><?php echo \$this->Html->link('<span class=\"fa fa-list\"></span>&nbsp;&nbsp;'.__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index'), array('escape' => false)); ?> </li>\n";
+												echo "\t\t<li><?php echo \$this->Html->link('<span class=\"fa fa-plus\"></span>&nbsp;&nbsp;'.__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('escape' => false)); ?> </li>\n";
 												$done[] = $details['controller'];
 											}
 										}
@@ -58,7 +58,7 @@
 					</div>
 				</div>			
 		</div><!-- end col md 3 -->
-		<div class="col-md-9">
+		<div class="col-lg-9">
 <?php 		echo "\t\t\t<?php echo \$this->Form->create('{$modelClass}', array('role' => 'form')); ?>\n\n"; ?>
 <?php
 		foreach ($fields as $field) {
@@ -80,7 +80,7 @@
 ?>
 <?php
 				echo "\t\t\t\t<div class=\"form-group\">\n";
-				echo "\t\t\t\t\t<?php echo \$this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>\n";
+				echo "\t\t\t\t\t<?php echo \$this->Form->submit(__('Submit'), array('class' => 'btn btn-primary')); ?>\n";
 				echo "\t\t\t\t</div>\n\n";
 
 			echo "\t\t\t<?php echo \$this->Form->end() ?>\n\n";
